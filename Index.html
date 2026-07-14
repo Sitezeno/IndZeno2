@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>INDZENO — Real-Time News, AI, Politics, History & Technology</title>
+<meta name="description" content="INDZENO is a premium AI-powered news platform covering breaking news, AI, politics, movies, history, biography, technology and top influencers — updated in real time.">
+<meta name="theme-color" content="#d60000">
+<link rel="canonical" href="https://indzeno.example.com/index.html">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="INDZENO">
+<meta property="og:type" content="website">
+<meta property="og:title" content="INDZENO — Real-Time News, AI, Politics, History & Technology">
+<meta property="og:description" content="INDZENO is a premium AI-powered news platform covering breaking news, AI, politics, movies, history, biography, technology and top influencers — updated in real time.">
+<meta property="og:image" content="assets/og-home.jpg">
+<meta property="og:url" content="https://indzeno.example.com/index.html">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="INDZENO — Real-Time News, AI, Politics, History & Technology">
+<meta name="twitter:description" content="INDZENO is a premium AI-powered news platform covering breaking news, AI, politics, movies, history, biography, technology and top influencers — updated in real time.">
+<meta name="twitter:image" content="assets/og-home.jpg">
+
+<!-- Schema.org: NewsMediaOrganization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsMediaOrganization",
+  "name": "INDZENO",
+  "url": "https://indzeno.example.com/",
+  "logo": "https://indzeno.example.com/assets/icon-512.png",
+  "description": "Real-time news, AI, politics, history and technology coverage."
+}
+</script>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== MASTHEAD ===== -->
+<header class="masthead-top">
+  <div class="container">
+    <div class="hdr-left">
+      <button class="icon-btn" data-open="sidebar" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="14" y2="17"/></svg>
+      </button>
+      <a href="index.html" class="logo">IND<span class="z">Z</span>ENO</a>
+      <span class="logo-tag">REAL-TIME NEWS · AI · POLITICS</span>
+    </div>
+    <div class="hdr-right">
+      <button class="icon-btn" data-open="search" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <button class="icon-btn theme-toggle" aria-label="Toggle dark mode">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <a href="admin/login.html" class="icon-btn" aria-label="Admin">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== BREAKING TICKER ===== -->
+<div class="ticker-bar">
+  <span class="ticker-tag"><span class="live-dot"></span>BREAKING</span>
+  <div class="ticker-track-wrap">
+    <div class="ticker-track" id="tickerTrack"></div>
+  </div>
+</div>
+
+<!-- ===== SIDEBAR ===== -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-head">
+    <a href="index.html" class="logo">IND<span class="z">Z</span>ENO</a>
+    <p>REAL-TIME NEWS • AI • POLITICS • HISTORY • TECHNOLOGY</p>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="news.html">News</a>
+    <a href="ai.html">AI <span class="count">24</span></a>
+    <a href="politics.html">Politics <span class="count">31</span></a>
+    <a href="movies.html">Movies <span class="count">18</span></a>
+    <a href="history.html">History <span class="count">12</span></a>
+    <a href="biography.html">Biography <span class="count">9</span></a>
+    <a href="technology.html">Technology <span class="count">27</span></a>
+    <a href="influencers.html">Influencers <span class="count">15</span></a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="sidebar-foot">© 2026 INDZENO MEDIA · ALL RIGHTS RESERVED</div>
+</aside>
+
+<!-- ===== SEARCH POPUP ===== -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <div class="search-top">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input id="searchInput" type="text" placeholder="Search stories, topics, authors…" autocomplete="off">
+      <button data-close="search" class="icon-btn" aria-label="Close search">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="search-filters hide-scroll">
+      <button class="chip" data-filter="AI">AI</button>
+      <button class="chip" data-filter="Politics">Politics</button>
+      <button class="chip" data-filter="Movies">Movies</button>
+      <button class="chip" data-filter="History">History</button>
+      <button class="chip" data-filter="Biography">Biography</button>
+      <button class="chip" data-filter="Technology">Technology</button>
+      <button class="chip" data-filter="Influencers">Influencers</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<main>
+  <!-- HERO -->
+  <div class="container" style="padding-top:18px">
+    <div class="hero-slider reveal">
+      <div class="hero-track" id="heroTrack"></div>
+      <button class="hero-nav prev" id="heroPrev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="15,18 9,12 15,6"/></svg></button>
+      <button class="hero-nav next" id="heroNext" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="9,18 15,12 9,6"/></svg></button>
+      <div class="hero-dots" id="heroDots"></div>
+    </div>
+  </div>
+
+  <!-- FEATURED STORIES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><h2>Featured Stories</h2><a class="see-all" href="news.html">SEE ALL →</a></div>
+      <div class="rail" id="featuredRail"></div>
+    </div>
+  </section>
+
+  <!-- LIVE UPDATES + WEATHER -->
+  <section class="section" style="padding-top:0">
+    <div class="container grid g2">
+      <div class="reveal">
+        <div class="section-head"><h2>Live Updates</h2><span class="eyebrow" style="color:var(--live)">● LIVE</span></div>
+        <div class="live-feed" id="liveFeed"></div>
+      </div>
+      <div>
+        <div class="section-head"><h2>Today's Weather</h2></div>
+        <div class="weather-card reveal">
+          <div>
+            <div class="weather-city">NEW DELHI, IN</div>
+            <div class="weather-temp">31°</div>
+            <div class="weather-desc">Partly cloudy · Feels like 34° · Humidity 58%</div>
+          </div>
+          <div class="weather-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="5"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LATEST NEWS -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head"><h2>Latest News</h2><a class="see-all" href="news.html">SEE ALL →</a></div>
+      <div class="grid g4" id="latestRail"></div>
+    </div>
+  </section>
+
+  <!-- TOP STORIES -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head"><h2>Top Stories</h2><a class="see-all" href="news.html">SEE ALL →</a></div>
+      <div class="rail rail-wide" id="topRail"></div>
+    </div>
+  </section>
+
+  <!-- EDITOR'S CHOICE -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head"><h2>Editor's Choice</h2></div>
+      <div id="editorPicks"></div>
+    </div>
+  </section>
+
+  <!-- AI SECTION -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head"><h2>AI</h2><a class="see-all" href="ai.html">SEE ALL →</a></div>
+      <div class="grid g4" id="aiRail"></div>
+    </div>
+  </section>
+
+  <!-- POLITICS -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head"><h2>Politics</h2><a class="see-all" href="politics.html">SEE ALL →</a></div>
+      <div class="grid g4" id="politicsRail"></div>
+    </div>
+  </section>
+
+  <!-- MOVIES -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head"><h2>Movies</h2><a class="see-all" href="movies.html">SEE ALL →</a></div>
+      <div class="rail" id="moviesRail"></div>
+    </div>
+  </section>
+
+  <!-- HISTORY -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head"><h2>History</h2><a class="see-all" href="history.html">SEE ALL →</a></div>
+      <div class="rail" id="historyRail"></div>
+    </div>
+  </section>
+
+  <!-- BIOGRAPHY -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head"><h2>Biography</h2><a class="see-all" href="biography.html">SEE ALL →</a></div>
+      <div class="rail" id="bioRail"></div>
+    </div>
+  </section>
+
+  <!-- TECHNOLOGY -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head"><h2>Technology</h2><a class="see-all" href="technology.html">SEE ALL →</a></div>
+      <div class="grid g4" id="techRail"></div>
+    </div>
+  </section>
+
+  <!-- INFLUENCERS -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head"><h2>Influencers</h2><a class="see-all" href="influencers.html">SEE ALL →</a></div>
+      <div class="rail" id="influencersRail"></div>
+    </div>
+  </section>
+
+  <!-- VIDEO NEWS -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head"><h2>Video News</h2></div>
+      <div class="rail" id="videoGrid"></div>
+    </div>
+  </section>
+
+  <!-- POPULAR TOPICS -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head"><h2>Popular Topics</h2></div>
+      <div class="topics-wrap" id="topicsWrap"></div>
+    </div>
+  </section>
+
+  <!-- MARKET + CRYPTO -->
+  <section class="section" style="padding-top:0">
+    <div class="container grid g2">
+      <div>
+        <div class="section-head"><h2>Market Updates</h2></div>
+        <div class="ticker-cards" id="marketGrid"></div>
+      </div>
+      <div>
+        <div class="section-head"><h2>Crypto Updates</h2></div>
+        <div class="ticker-cards" id="cryptoGrid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTHORS -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head"><h2>Our Authors</h2></div>
+      <div class="grid g4" id="authorsGrid"></div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== NEWSLETTER ===== -->
+<div class="container section" style="padding-top:0">
+  <div class="newsletter reveal">
+    <span class="eyebrow" style="color:#ff6b6b">Stay Ahead</span>
+    <h2>The day's biggest stories, before your morning coffee.</h2>
+    <p>Join 480,000+ readers getting the INDZENO Daily Brief — AI-curated, human-edited, zero spam.</p>
+    <form class="newsletter-form">
+      <input type="email" placeholder="you@email.com" required>
+      <button class="btn" type="submit">Subscribe</button>
+    </form>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">IND<span class="z">Z</span>ENO</a>
+      <p>Real-time news, powered by AI and edited by journalists. Politics, technology, history, and culture — reported straight, explained clearly.</p>
+      <div class="social-row">
+        <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0022.4.36a9 9 0 01-2.83 1.08 4.52 4.52 0 00-7.7 4.13A12.83 12.83 0 013 1.64a4.52 4.52 0 001.4 6.04A4.48 4.48 0 012.8 7v.06a4.52 4.52 0 003.63 4.43 4.5 4.5 0 01-2 .08 4.53 4.53 0 004.22 3.14A9.06 9.06 0 012 16.58 12.79 12.79 0 008.9 18.6c8.28 0 12.8-6.86 12.8-12.8v-.58A9.14 9.14 0 0023 3z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="4"/><polygon points="10,9 16,12 10,15"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Sections</h5>
+      <a href="ai.html">AI</a>
+      <a href="politics.html">Politics</a>
+      <a href="movies.html">Movies</a>
+      <a href="history.html">History</a>
+    </div>
+    <div class="footer-col">
+      <h5>More</h5>
+      <a href="biography.html">Biography</a>
+      <a href="technology.html">Technology</a>
+      <a href="influencers.html">Influencers</a>
+      <a href="news.html">Latest News</a>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="admin/login.html">Admin Login</a>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Cookie Policy</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 INDZENO Media Pvt. Ltd. All rights reserved.</span>
+    <span>Built for GitHub Pages · Powered by Supabase</span>
+  </div>
+</footer>
+
+<!-- ===== BOTTOM NAV ===== -->
+<nav class="bottom-nav">
+  <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>Home</a>
+  <a href="news.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="7" y1="9" x2="17" y2="9"/><line x1="7" y1="13" x2="17" y2="13"/><line x1="7" y1="17" x2="12" y2="17"/></svg>News</a>
+  <a href="ai.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="12" rx="2"/><circle cx="9" cy="13" r="1.3"/><circle cx="15" cy="13" r="1.3"/><path d="M9 4h6M12 4v3"/></svg>AI</a>
+  <a href="technology.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M4 9h1M4 15h1M19 9h1M19 15h1M9 4v1M15 4v1M9 19v1M15 19v1"/></svg>Tech</a>
+  <a href="about.html"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>More</a>
+</nav>
+
+<!-- ===== AI CHAT WIDGET ===== -->
+<button class="ai-fab" id="aiFab" aria-label="Open INDZENO AI assistant">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="12" rx="2"/><circle cx="9" cy="13" r="1.3"/><circle cx="15" cy="13" r="1.3"/><path d="M9 4h6M12 4v3"/></svg>
+</button>
+<div class="ai-chat" id="aiChat">
+  <div class="ai-chat-head">
+    <div><strong>INDZENO AI</strong><br><span>Newsroom assistant</span></div>
+    <button id="aiChatClose" class="icon-btn" style="background:rgba(255,255,255,.12)" aria-label="Close chat">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="ai-chat-body" id="aiChatBody">
+    <div class="ai-msg bot">Hi! I can summarize stories, generate headlines, rewrite copy, or show you what's trending. What do you need?</div>
+  </div>
+  <div class="ai-quick">
+    <button data-q="Summarize the top AI story">Summarize top story</button>
+    <button data-q="What's trending?">What's trending?</button>
+    <button data-q="Generate a headline">Generate headline</button>
+  </div>
+  <div class="ai-chat-input">
+    <input type="text" id="aiChatInput" placeholder="Ask INDZENO AI…">
+    <button id="aiChatSend" aria-label="Send">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9"/></svg>
+    </button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+<script src="js/script.js" defer></script>
+</body>
+                                                                                                                                                                                                                  </html>
+
+
